@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace SpaceShooter.Core
 {
@@ -22,8 +24,9 @@ namespace SpaceShooter.Core
 
         public T GetObject()
         {
-            if(HasFree() == false && _isAutoExpand == false)
-                Debug.LogError($"Cannot get object of type {typeof(T)}");
+            if (HasFree() == false && _isAutoExpand == false)
+                throw new NullReferenceException($"Cannot get object of type {typeof(T)}");
+
 
             foreach (var obj in _objects)
             {

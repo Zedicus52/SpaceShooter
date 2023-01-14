@@ -11,7 +11,7 @@ namespace SpaceShooter.Abstraction
     public abstract class Enemy : MonoBehaviour, IDamageable, IPauseHandler, IHealth
     {
         public event Action<int> HealthChanged;
-        protected event Action EnemyDestroyed;
+        public event Action<Enemy> EnemyDestroyed;
 
         public Vector3 SpriteSize { get; private set; }
         public BorderFloat Border { get; private set; }
@@ -155,7 +155,7 @@ namespace SpaceShooter.Abstraction
 
         protected virtual void OnEnemyDestroyed()
         {
-            EnemyDestroyed?.Invoke();
+            EnemyDestroyed?.Invoke(this);
             gameObject.SetActive(false);
         }
     }

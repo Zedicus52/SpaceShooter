@@ -381,42 +381,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 221254079}
-  - component: {fileID: 221254078}
+  - component: {fileID: 221254080}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &221254078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 221254077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624b0ddf59d348da97d1ebaad49fdbcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileParentObject: {fileID: 1448721649}
-  gunner: {fileID: 742231180758350096, guid: fdf5249edcb5d934cad5df4f36fd4991, type: 3}
-  gunnerSpawnDelay: 7
-  gunnerMaxCount: 2
-  kamikaze: {fileID: 2085273361797085820, guid: a5b78fc43f06fea4e97a601bfade1e21, type: 3}
-  kamikazeSpawnDelay: 0
-  kamikazeMaxCount: 3
-  healer: {fileID: 0}
-  healerSpawnDelay: 0
-  healerMaxCount: 0
-  bombardier: {fileID: 8908451037857122561, guid: 1441584cfcf1dab4cbfa7c409607b673, type: 3}
-  bombardierSpawnDelay: 0
-  bombardierMaxCount: 0
-  laserShooter: {fileID: 1942714213950530064, guid: b856d6cb479112b4898eb15c9b4ea55d, type: 3}
-  laserShooterSpawnDelay: 0
-  laserShooterMaxCount: 2
+  m_IsActive: 1
 --- !u!4 &221254079
 Transform:
   m_ObjectHideFlags: 0
@@ -433,6 +405,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &221254080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221254077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c31dffe9674f749a97fc98f120f544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCountForSpawn: 5
+  spawnDelay: 20
+  prefab: {fileID: 742231180758350096, guid: fdf5249edcb5d934cad5df4f36fd4991, type: 3}
+  parentObjectForProjectiles: {fileID: 1448721649}
 --- !u!1 &317070603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,7 +2714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicCount: 10
   prefab: {fileID: 6853591445027876705, guid: e48ef8cce5d2b8c4aaa949e54e45d2c4, type: 3}
-  shootDelay: 3
+  shootDelay: 1.5
   parentForProjectiles: {fileID: 1930275035}
 --- !u!114 &1945478806
 MonoBehaviour:
@@ -2740,7 +2728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8936d93c860c4d7bb1e6ee733114fdcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10000
   takeDamageDelay: 2
 --- !u!50 &1945478807
 Rigidbody2D:
