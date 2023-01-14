@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootDelay: 3.5
   projectile: {fileID: 9066810364703416870, guid: 7fb4c084682f20542a8611124859771b, type: 3}
-  basicCount: 5
+  basicCount: 3
   invertedDirectionForProjectile: 1
 --- !u!114 &742231180758350096
 MonoBehaviour:

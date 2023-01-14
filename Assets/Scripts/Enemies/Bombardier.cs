@@ -30,6 +30,7 @@ namespace SpaceShooter.Enemies
         public override void OnEnable()
         {
             _timerIsWork = false;
+            _isStartAttack = true;
             SetDirection();
             _currentHealth = maxHealth;
             _canMove = true;

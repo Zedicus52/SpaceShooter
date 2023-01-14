@@ -41,6 +41,19 @@ namespace SpaceShooter.Projectiles
             _collider.offset = new Vector2(_collider.size.x, _startOffset);
         }
 
+        protected override void OnTriggerEnter2D(Collider2D other)
+        {
+            if(IsPaused)
+                return;
+            
+            if (other.TryGetComponent(out IDamageable obj))
+            {
+                if(obj is Enemy)
+                    return;
+                obj.TakeDamage(GetDamage());
+            }
+        }
+
         protected override void Update()
         {
             if (_renderer.size.y < _maxSpriteHeight)

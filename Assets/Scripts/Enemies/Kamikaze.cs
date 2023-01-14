@@ -36,6 +36,8 @@ namespace SpaceShooter.Enemies
         {
             _transform.position = Vector3.MoveTowards(_transform.position, _movementPoint, 
                 speed * Time.deltaTime);
+            if(_transform.position == _movementPoint && gameObject.activeInHierarchy)
+                gameObject.SetActive(false);
         }
 
         private void RotateToTarget()

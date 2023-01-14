@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using SpaceShooter.Core;
@@ -16,16 +15,14 @@ namespace SpaceShooter.Abstraction
         
         protected int _currentCount;
         protected Pool<Enemy> _pool;
-        protected List<Enemy> _enabledEnemies;
         protected bool _canSpawn;
         protected Task _waitTask;
-        protected CancellationTokenSource _cancellationTokenSource;
+        private CancellationTokenSource _cancellationTokenSource;
 
 
         private void Awake()
         {
             _pool = new Pool<Enemy>(prefab, transform, false, maxCountForSpawn);
-            _enabledEnemies = new List<Enemy>();
             _cancellationTokenSource = new CancellationTokenSource();
             _waitTask = new Task(WaitForCanSpawn, _cancellationTokenSource.Token);
         }
@@ -38,15 +35,14 @@ namespace SpaceShooter.Abstraction
             StartCoroutine(Spawn());
         }
 
-        protected virtual void OnDisable()
-        {
-            _enabledEnemies.Clear();
-        }
         protected virtual void InitializeEnemy()
         {
             if (_currentCount >= maxCountForSpawn)
             {
                 _canSpawn = false;
+                _cancellationTokenSource.Cancel();
+                _cancellationTokenSource = new CancellationTokenSource();
+                _waitTask = new Task(WaitForCanSpawn, _cancellationTokenSource.Token);
                 _waitTask.Start();
                 return;
             }
@@ -54,7 +50,7 @@ namespace SpaceShooter.Abstraction
             enemy.InitializeEnemy(parentObjectForProjectiles);
             enemy.EnemyDestroyed += OnEnemyDestroy;
             float x = Random.Range(enemy.Border.LeftSide, enemy.Border.RightSide);
-            float y = Random.Range(0.1f, enemy.Border.UpSide);
+            float y = Random.Range(enemy.Border.DownSide*0.5f, enemy.Border.UpSide);
             enemy.transform.position = new Vector3(x,y,0);
             enemy.gameObject.SetActive(true);
             _currentCount += 1;
@@ -64,7 +60,6 @@ namespace SpaceShooter.Abstraction
         {
             _currentCount -= 1;
             enemy.EnemyDestroyed -= OnEnemyDestroy;
-            _enabledEnemies.Remove(enemy);
         }
 
         private async void WaitForCanSpawn()

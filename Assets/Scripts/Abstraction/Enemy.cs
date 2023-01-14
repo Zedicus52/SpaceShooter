@@ -59,9 +59,9 @@ namespace SpaceShooter.Abstraction
             _currentHealth = maxHealth;
             _canMove = true;
             _enemyCanShoot = false;
-            await Task.Delay(1000);
+            await Task.Delay(100);
             _enemyCanShoot = true;
-            if(_weapon != null)
+            if(_weapon != null && gameObject.activeInHierarchy)
                 StartCoroutine(_shootCoroutine);
         }
         public abstract void Update();

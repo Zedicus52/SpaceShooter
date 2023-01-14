@@ -382,6 +382,8 @@ GameObject:
   m_Component:
   - component: {fileID: 221254079}
   - component: {fileID: 221254080}
+  - component: {fileID: 221254081}
+  - component: {fileID: 221254082}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -412,7 +414,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221254077}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52c31dffe9674f749a97fc98f120f544, type: 3}
   m_Name: 
@@ -420,6 +422,38 @@ MonoBehaviour:
   maxCountForSpawn: 5
   spawnDelay: 20
   prefab: {fileID: 742231180758350096, guid: fdf5249edcb5d934cad5df4f36fd4991, type: 3}
+  parentObjectForProjectiles: {fileID: 1448721649}
+--- !u!114 &221254081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221254077}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942dee3b5f45450982def9770c7ea7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCountForSpawn: 3
+  spawnDelay: 40
+  prefab: {fileID: 8908451037857122561, guid: 1441584cfcf1dab4cbfa7c409607b673, type: 3}
+  parentObjectForProjectiles: {fileID: 1448721649}
+--- !u!114 &221254082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221254077}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abf966761124de4b55f82229f0ce30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCountForSpawn: 2
+  spawnDelay: 50
+  prefab: {fileID: 2085273361797085820, guid: a5b78fc43f06fea4e97a601bfade1e21, type: 3}
   parentObjectForProjectiles: {fileID: 1448721649}
 --- !u!1 &317070603
 GameObject:
