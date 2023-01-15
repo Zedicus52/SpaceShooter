@@ -13,6 +13,8 @@ namespace SpaceShooter.Projectiles
         {
             if (other.TryGetComponent(out IDamageable obj))
             {
+                if(obj is Enemy)
+                    return;
                 obj.TakeDamage(GetDamage());
                 gameObject.transform.parent.gameObject.SetActive(false);
             }

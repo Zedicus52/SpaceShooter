@@ -1,10 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using SpaceShooter.Abstraction;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace SpaceShooter.Projectiles
 {
@@ -47,6 +44,7 @@ namespace SpaceShooter.Projectiles
         {
             if(IsPaused)
                 return;
+            
             _colliders.Add(other);
         }
 
@@ -69,6 +67,8 @@ namespace SpaceShooter.Projectiles
             {
                 if (col.TryGetComponent(out IDamageable obj))
                 {
+                    if(obj is Enemy)
+                        continue;
                     obj.TakeDamage(GetDamage());
                 }
             }
