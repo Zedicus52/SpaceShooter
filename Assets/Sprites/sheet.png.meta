@@ -5157,12 +5157,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shield1.png
+      name: shieldLevel3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 504
-        width: 133
+        width: 132
         height: 108
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -5178,13 +5178,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shield2.png
+      name: shieldLevel2
       rect:
         serializedVersion: 2
         x: 0
         y: 612
         width: 143
-        height: 119
+        height: 118
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -5199,7 +5199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shield3.png
+      name: shieldLevel1
       rect:
         serializedVersion: 2
         x: 0
@@ -6335,6 +6335,7 @@ TextureImporter:
       laserShooterBlue: 1079199761341311137
       kamikadzeGreen: 1371635291033550049
       bonusBackgroundRed: -6705204528405895651
+      shieldLevel3: 8055636226449465537
       fire12.png: 6076265968685442356
       cockpitYellow_2.png: 8201889261261836938
       powerupYellow_star.png: 1003888302522366858
@@ -6379,9 +6380,9 @@ TextureImporter:
       healerGreen: -6610940037711747316
       laserBlue13.png: -6397823618000266404
       gun04.png: -7645379865865487777
+      playerLife1_green.png: -280619407508743635
       fire07.png: 4160354023047995600
       laserBlue02.png: 3602526423769409086
-      playerLife1_green.png: -280619407508743635
       numeral5.png: 7893153474798392062
       laserGreen04.png: 7989082572873131969
       cockpitRed_1.png: 5687129572882118783
@@ -6390,7 +6391,6 @@ TextureImporter:
       engine5.png: -7393969260800644548
       wingBlue_1.png: -3778975856283944473
       laserRed07.png: 2244685038557466302
-      shield2.png: -3102023160662443161
       star1.png: 3310680609277666421
       pill_red.png: 4582730908298752497
       numeral4.png: -1213923486846579734
@@ -6474,6 +6474,7 @@ TextureImporter:
       beam5.png: -8174246001080614513
       cockpitGreen_5.png: -2649269674437484070
       cockpitGreen_0.png: -9218578022481777890
+      shieldLevel2: -3102023160662443161
       gun02.png: -6003376888718104736
       beam4.png: -5166968913409246286
       cockpitGreen_7.png: -2524788258451768313
@@ -6497,7 +6498,6 @@ TextureImporter:
       beam0.png: 3646490248035491683
       engine4.png: -2852872388609347510
       laserRed16.png: -3604903149283597745
-      shield1.png: 8055636226449465537
       BigMeteor3: -8339005489133269724
       fire11.png: 2550652039553797809
       playerShip2_blue.png: -8402970689181397014
@@ -6519,6 +6519,7 @@ TextureImporter:
       wingYellow_7.png: 1235163480012904704
       kamikadzeBlack: -8763662198294554495
       pill_blue.png: 1731053707704713080
+      shieldLevel1: -518384228343214380
       wingBlue_0.png: -3282575277786821151
       beam6.png: 711465747966223245
       cockpitRed_0.png: -3672171573856778257
@@ -6561,7 +6562,6 @@ TextureImporter:
       wingRed_3.png: 15985396131609172
       fire10.png: 6048276507865764938
       fire09.png: -4440871810498457145
-      shield3.png: -518384228343214380
       playerLife1_blue.png: -6542045311909502710
       BigMeteor5: -6366855468589548433
       fire19.png: 437340546767797571

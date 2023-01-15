@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8333764391256576314}
   - component: {fileID: 8333764391256576315}
   - component: {fileID: 3626197098458497140}
+  - component: {fileID: 1131484366}
   m_Layer: 0
   m_Name: MaxHealth
   m_TagString: Untagged
@@ -99,6 +100,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 1.2
+  minIncreasePercent: 5
+  maxIncreasePercent: 25
+--- !u!61 &1131484366
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333764391256576312}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.06, y: 0.08, z: 0.06, w: 0.08}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.33, y: 0.33}
+    newSize: {x: 0.45, y: 0.45}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.4}
+  m_EdgeRadius: 0
 --- !u!1 &8333764391729989324
 GameObject:
   m_ObjectHideFlags: 0

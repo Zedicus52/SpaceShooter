@@ -109,7 +109,6 @@ namespace SpaceShooter.Abstraction
 
         public virtual void TakeDamage(int damage)
         {
-            
             if(IsAlive == false)
                 return;
             
@@ -121,7 +120,6 @@ namespace SpaceShooter.Abstraction
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;
-                Debug.Log("Enemy destroy");
                 OnEnemyDestroyed();
             }
             OnHealthChanged(_currentHealth);

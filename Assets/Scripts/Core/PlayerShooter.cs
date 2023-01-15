@@ -8,13 +8,16 @@ namespace SpaceShooter.Core
     public class PlayerShooter : MonoBehaviour, IPauseHandler
     {
         public bool IsPaused { get; private set; }
+        public float ShootDelay => shootDelay;
         [SerializeField] private int basicCount;
         [SerializeField] private Projectile prefab;
         [SerializeField] private float shootDelay;
+        [SerializeField] private int maxLevelForShootDelayBonus;
         [SerializeField] private Transform parentForProjectiles;
         private Pool<Projectile> _projectilePool;
         private bool _canShoot = true;
         private IEnumerator _shootCoroutine;
+        private int _currentLevelBonus;
         
         
 
@@ -56,6 +59,18 @@ namespace SpaceShooter.Core
         public void SetPaused(bool isPaused) => IsPaused = isPaused;
 
         private void OnDestroy() => ProjectContext.Instance.PauseManager.UnRegister(this);
+
+        public void DecreaseShootDelay(float delay)
+        {
+            if(_currentLevelBonus >= maxLevelForShootDelayBonus)
+                return;
+            
+            if(delay <= 0)
+                Debug.LogError("Delay cannot be negative or zero");
+            
+            shootDelay -= delay;
+            _currentLevelBonus += 1;
+        }
 
     }
 }

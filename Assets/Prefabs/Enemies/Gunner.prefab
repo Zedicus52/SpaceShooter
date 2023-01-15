@@ -138,6 +138,10 @@ MonoBehaviour:
     list:
     - item: {fileID: 648750541488914529, guid: 29948ccf353a16949b833641f4f9b833, type: 3}
       weight: 4
+    - item: {fileID: 3626197098458497140, guid: 905107da416da034781c7654a7034f84, type: 3}
+      weight: 1
+    - item: {fileID: 3710392005077668208, guid: 01b30fcd3f7cb9b40a09fd530b31b882, type: 3}
+      weight: 2
   bonusDropChance: 0.2
   speed: 3
   maxHealth: 25

@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 using SpaceShooter.Abstraction;
 using UnityEngine;
 
@@ -9,6 +8,7 @@ namespace SpaceShooter.Core
     {
         public event Action<int> HealthChanged;
         public bool IsAlive => _currentHealth > 0;
+        [SerializeField] private int maxLevelForMaxHealthBonus;
         
         [SerializeField] private int maxHealth;
         [SerializeField] private float takeDamageDelay;
@@ -16,6 +16,7 @@ namespace SpaceShooter.Core
         private int _currentHealth;
         private float _currentTime;
         private bool _timerIsWork;
+        private int _currentLevelMaxHealthBonus;
 
         private void OnEnable()
         {
@@ -86,6 +87,21 @@ namespace SpaceShooter.Core
             else
                 _currentHealth += health;
             OnHealthChanged(_currentHealth);
+        }
+
+        public void IncreaseMaxHealth(int health)
+        {
+            if(IsAlive == false || _currentLevelMaxHealthBonus >= maxLevelForMaxHealthBonus)
+                return;
+            
+            if(health <= 0)
+                Debug.LogError("Health cannot be negative or zero");
+
+            maxHealth += health;
+            _currentHealth += health;
+            _currentLevelMaxHealthBonus += 1;
+            OnHealthChanged(_currentHealth);
+
         }
 
         private void RestartTimer()
