@@ -29,7 +29,6 @@ namespace SpaceShooter.Enemies
         {
             _transform.rotation = Quaternion.identity;
             _canMove = false;
-            TakeDamage(maxHealth);
         }
 
         public override void Update()

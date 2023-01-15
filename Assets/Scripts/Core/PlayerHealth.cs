@@ -73,6 +73,21 @@ namespace SpaceShooter.Core
             
         }
 
+        public void RecoverHealth(int health)
+        {
+            if(IsAlive == false || _currentHealth == maxHealth)
+                return;
+            
+            if(health <= 0)
+                Debug.LogError("Health cannot be negative or zero");
+
+            if (_currentHealth + health > maxHealth)
+                _currentHealth += maxHealth - _currentHealth;
+            else
+                _currentHealth += health;
+            OnHealthChanged(_currentHealth);
+        }
+
         private void RestartTimer()
         {
             _currentTime = takeDamageDelay;

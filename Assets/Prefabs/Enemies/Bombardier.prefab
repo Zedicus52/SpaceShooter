@@ -195,6 +195,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a540ee02f5741f5934f096a683398d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebug: 0
+  bonuses:
+    list:
+    - item: {fileID: 648750541488914529, guid: 29948ccf353a16949b833641f4f9b833, type: 3}
+      weight: 4
+  bonusDropChance: 0.8
   speed: 2.5
   maxHealth: 10
   attackDelay: 10

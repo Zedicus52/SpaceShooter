@@ -4758,16 +4758,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powerupBlue.png
+      name: bonusBackgroundBlue
       rect:
         serializedVersion: 2
         x: 696
         y: 662
-        width: 34
+        width: 33
         height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 6, y: 8, z: 6, w: 8}
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -4842,7 +4842,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powerupGreen.png
+      name: bonusBackgroundGreen
       rect:
         serializedVersion: 2
         x: 774
@@ -4851,7 +4851,7 @@ TextureImporter:
         height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 8, y: 8, z: 6, w: 11}
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -4926,7 +4926,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powerupRed.png
+      name: bonusBackgroundRed
       rect:
         serializedVersion: 2
         x: 491
@@ -4935,7 +4935,7 @@ TextureImporter:
         height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 9, z: 10, w: 9}
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -5010,7 +5010,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powerupYellow.png
+      name: bonusBackgroundYellow
       rect:
         serializedVersion: 2
         x: 774
@@ -5019,7 +5019,7 @@ TextureImporter:
         height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 6, y: 8, z: 10, w: 7}
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -6322,12 +6322,11 @@ TextureImporter:
       playerShip3_damage3.png: -5401503732398968508
       playerShip1_orange.png: 4851533150266067239
       bolt_gold.png: 8082763461715426152
-      powerupGreen.png: 3808985181416546002
       ufoGreen.png: 6251165375043374333
+      bombardierBlack: -6619663906675191081
       playerShip2_damage2.png: -2628411099061857690
       laserGreen06.png: -5323291335239706552
       gun06.png: -5939399024722635814
-      bombardierBlack: -6619663906675191081
       bold_silver.png: -3711355299728609468
       cockpitYellow_7.png: 2735845915108849529
       powerupGreen_shield.png: -8971159898044158050
@@ -6335,6 +6334,7 @@ TextureImporter:
       star_gold.png: 8631437530027257385
       laserShooterBlue: 1079199761341311137
       kamikadzeGreen: 1371635291033550049
+      bonusBackgroundRed: -6705204528405895651
       fire12.png: 6076265968685442356
       cockpitYellow_2.png: 8201889261261836938
       powerupYellow_star.png: 1003888302522366858
@@ -6379,9 +6379,9 @@ TextureImporter:
       healerGreen: -6610940037711747316
       laserBlue13.png: -6397823618000266404
       gun04.png: -7645379865865487777
-      playerLife1_green.png: -280619407508743635
       fire07.png: 4160354023047995600
       laserBlue02.png: 3602526423769409086
+      playerLife1_green.png: -280619407508743635
       numeral5.png: 7893153474798392062
       laserGreen04.png: 7989082572873131969
       cockpitRed_1.png: 5687129572882118783
@@ -6394,6 +6394,7 @@ TextureImporter:
       star1.png: 3310680609277666421
       pill_red.png: 4582730908298752497
       numeral4.png: -1213923486846579734
+      bonusBackgroundGreen: 3808985181416546002
       laserGreen14.png: -8188983256552683446
       BigMeteor2: -245694023857363278
       playerLife3_red.png: 649100677075123729
@@ -6432,6 +6433,7 @@ TextureImporter:
       numeral7.png: -2864947593817152609
       meteorBrown_tiny2.png: -215236285221329341
       beam1.png: -6044696764575874939
+      bonusBackgroundYellow: 2582644265671368683
       playerShip1_damage2.png: -3443111094430537470
       playerShip3_orange.png: -2871634709916022068
       wingRed_0.png: 5170150559982808655
@@ -6458,7 +6460,6 @@ TextureImporter:
       laserShooterOrange: 5645763318122690536
       laserGreen13.png: -8669993147749747910
       cockpitBlue_1.png: -7711972654998331904
-      powerupBlue.png: -602186881644547713
       meteorGrey_tiny2.png: -4619880252180113523
       gun00.png: -3321541064797330735
       fire17.png: 6548886528512625061
@@ -6469,6 +6470,7 @@ TextureImporter:
       cockpitRed_2.png: 4319335202327419710
       playerLife2_green.png: -4588254111092450104
       wingGreen_4.png: 7002217320564373851
+      bonusBackgroundBlue: -602186881644547713
       beam5.png: -8174246001080614513
       cockpitGreen_5.png: -2649269674437484070
       cockpitGreen_0.png: -9218578022481777890
@@ -6511,10 +6513,9 @@ TextureImporter:
       playerShip1_green.png: 4086461823457673505
       powerupRed_bolt.png: 9172342809337266121
       wingBlue_4.png: -9059544785123621154
-      powerupRed.png: -6705204528405895651
+      wingYellow_6.png: -2938354190850396204
       cockpitBlue_3.png: 3415711516682148479
       powerupBlue_star.png: 118367418820200075
-      wingYellow_6.png: -2938354190850396204
       wingYellow_7.png: 1235163480012904704
       kamikadzeBlack: -8763662198294554495
       pill_blue.png: 1731053707704713080
@@ -6549,7 +6550,7 @@ TextureImporter:
       cockpitRed_7.png: -2136137060809322968
       laserGreen12.png: -4543711948003703377
       laserGreen03.png: -4924013827390446724
-      powerupYellow.png: 2582644265671368683
+      MediumMeteor1: 3467865264933486527
       scratch2.png: 4763412265790839939
       laserRed10.png: -6744653185857572967
       laserRed15.png: 4369162093305101258
@@ -6570,7 +6571,7 @@ TextureImporter:
       buttonRed.png: 7525693508291839157
       wingGreen_7.png: -2688075590036205744
       scratch3.png: -6937849387448672213
-      MediumMeteor1: 3467865264933486527
+      MediumMeteor3: -7611726189556237606
       gun05.png: -5366083449385457677
       playerLife3_orange.png: 1550021549408369761
       powerupRed_star.png: -8880370675338432249
@@ -6589,7 +6590,6 @@ TextureImporter:
       numeral6.png: -2526401654114208938
       laserBlue10.png: 7869088444859223245
       wingBlue_2.png: 7761993133193807061
-      MediumMeteor3: -7611726189556237606
       laserBlue03.png: -1020090064025625753
       pill_yellow.png: 8832732456259409462
       numeral1.png: -4294954472446593215

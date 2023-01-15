@@ -419,6 +419,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDebug: 0
+  bonuses:
+    list:
+    - item: {fileID: 648750541488914529, guid: 29948ccf353a16949b833641f4f9b833, type: 3}
+      weight: 4
+  bonusDropChance: 0.5
   speed: 1.3
   maxHealth: 10
   healAmount: 3

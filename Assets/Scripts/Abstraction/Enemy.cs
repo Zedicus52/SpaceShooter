@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Threading.Tasks;
+using SpaceShooter.Core;
 using SpaceShooter.DataStructures;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace SpaceShooter.Abstraction
 {
@@ -18,7 +20,10 @@ namespace SpaceShooter.Abstraction
         public bool IsAlive => _currentHealth > 0;
 
         [SerializeField] private bool isDebug;
-        
+
+        [SerializeField] protected WeightRandomList<Bonus> bonuses;
+        [Range(0f,1f)]
+        [SerializeField] protected float bonusDropChance;
         [SerializeField] protected float speed;
         [SerializeField] protected int maxHealth;
         protected Transform _transform;
@@ -70,7 +75,6 @@ namespace SpaceShooter.Abstraction
         {
             _canMove = false;
             _enemyCanShoot = false;
-            TakeDamage(maxHealth);
             if(_weapon != null)
                 StopCoroutine(_shootCoroutine);
         }
@@ -117,6 +121,7 @@ namespace SpaceShooter.Abstraction
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;
+                Debug.Log("Enemy destroy");
                 OnEnemyDestroyed();
             }
             OnHealthChanged(_currentHealth);
@@ -156,6 +161,14 @@ namespace SpaceShooter.Abstraction
         protected virtual void OnEnemyDestroyed()
         {
             EnemyDestroyed?.Invoke(this);
+            if (bonuses.Count != 0)
+            {
+                if (Random.value < bonusDropChance)
+                {
+                    var bonus = bonuses.GetRandom();
+                    Instantiate(bonus.gameObject,  _transform.position, Quaternion.identity);
+                }
+            }
             gameObject.SetActive(false);
         }
     }
