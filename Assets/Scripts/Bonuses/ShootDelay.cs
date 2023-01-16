@@ -13,10 +13,9 @@ namespace SpaceShooter.Bonuses
         protected override void OnTriggerEnter2D(Collider2D col)
         {
             if (col.TryGetComponent(out PlayerShooter shooter))
-            {
+            { 
                 float percent = Random.Range(minPercent, maxPercent);
-                float delay = shooter.ShootDelay * percent * 0.01f;
-                shooter.DecreaseShootDelay(delay);
+                shooter.OnWeaponShootDelayChanged(percent);
                 Destroy(gameObject);
             }
         }

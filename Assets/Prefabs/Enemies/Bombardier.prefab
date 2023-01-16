@@ -204,6 +204,8 @@ MonoBehaviour:
       weight: 1
     - item: {fileID: 3710392005077668208, guid: 01b30fcd3f7cb9b40a09fd530b31b882, type: 3}
       weight: 2
+    - item: {fileID: 6614867621535571979, guid: e73b7d9806ff45641ba280c2c8696ec5, type: 3}
+      weight: 3
   bonusDropChance: 0.8
   speed: 2.5
   maxHealth: 10

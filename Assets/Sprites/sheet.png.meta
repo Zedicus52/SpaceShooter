@@ -5139,8 +5139,8 @@ TextureImporter:
       name: scratch3.png
       rect:
         serializedVersion: 2
-        x: 346
-        y: 717
+        x: 345
+        y: 716
         width: 16
         height: 12
       alignment: 0
@@ -5325,7 +5325,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: star2.png
+      name: railgunIcon
       rect:
         serializedVersion: 2
         x: 222
@@ -6380,9 +6380,9 @@ TextureImporter:
       healerGreen: -6610940037711747316
       laserBlue13.png: -6397823618000266404
       gun04.png: -7645379865865487777
-      playerLife1_green.png: -280619407508743635
       fire07.png: 4160354023047995600
       laserBlue02.png: 3602526423769409086
+      playerLife1_green.png: -280619407508743635
       numeral5.png: 7893153474798392062
       laserGreen04.png: 7989082572873131969
       cockpitRed_1.png: 5687129572882118783
@@ -6395,6 +6395,7 @@ TextureImporter:
       pill_red.png: 4582730908298752497
       numeral4.png: -1213923486846579734
       bonusBackgroundGreen: 3808985181416546002
+      railgunIcon: -6263555544328688002
       laserGreen14.png: -8188983256552683446
       BigMeteor2: -245694023857363278
       playerLife3_red.png: 649100677075123729
@@ -6413,7 +6414,6 @@ TextureImporter:
       fire16.png: 8752297365800118195
       powerupGreen_star.png: 8984519259080213226
       SmallMeteor4: -4431388003160355013
-      star2.png: -6263555544328688002
       bombardierProjectile: 969807161020003136
       fire05.png: 7249783839268456832
       playerLife2_orange.png: 2794106048496908037
