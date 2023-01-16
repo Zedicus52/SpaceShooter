@@ -33,7 +33,14 @@ namespace SpaceShooter.Core
         public void OnWeaponChanged(PlayerWeapon weapon) => WeaponChanged?.Invoke(weapon);
         public void OnWeaponShootDelayChanged(float percent) => WeaponShootDelayChanged?.Invoke(percent);
 
-        public void SetWeapon(PlayerWeapon weapon) => currentWeapon = weapon;
+        public void SetWeapon(PlayerWeapon weapon)
+        {
+            _canShoot = false;
+            currentWeapon = weapon;
+            currentWeapon.InitializeWeapon(parentForProjectiles);
+            _canShoot = true;
+            //StartCoroutine(ShootCycle());
+        }
     }
 }
  

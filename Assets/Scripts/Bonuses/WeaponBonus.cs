@@ -12,6 +12,7 @@ namespace SpaceShooter.Bonuses
             if (col.TryGetComponent(out PlayerShooter shooter))
             {
                 shooter.OnWeaponChanged(weapon);
+                Destroy(gameObject);
             }
         }
     }

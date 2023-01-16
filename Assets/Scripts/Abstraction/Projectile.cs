@@ -14,7 +14,7 @@ namespace SpaceShooter.Abstraction
         [SerializeField] private int minDamage;
         [SerializeField] private int maxDamage;
 
-        [SerializeField] private float speed;
+        [SerializeField] protected float speed;
         protected Transform _transform;
         private bool _isInitialized;
 

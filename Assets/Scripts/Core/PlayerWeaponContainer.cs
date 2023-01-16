@@ -33,7 +33,8 @@ namespace SpaceShooter.Core
         }
         private void PlayerShooterOnWeaponChanged(PlayerWeapon obj)
         {
-            var weapon = weapons.FirstOrDefault(x => x == obj);
+            var weapon = weapons.FirstOrDefault(x => x.GetType() == obj.GetType());
+            weapons.ForEach(w => w.gameObject.SetActive(false));
             weapon.gameObject.SetActive(true);
             playerShooter.SetWeapon(weapon);
         }
