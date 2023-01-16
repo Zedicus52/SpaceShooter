@@ -2511,7 +2511,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: laserBlue10.png
+      name: railgunProjectile
       rect:
         serializedVersion: 2
         x: 740
@@ -6381,8 +6381,8 @@ TextureImporter:
       laserBlue13.png: -6397823618000266404
       gun04.png: -7645379865865487777
       fire07.png: 4160354023047995600
-      laserBlue02.png: 3602526423769409086
       playerLife1_green.png: -280619407508743635
+      laserBlue02.png: 3602526423769409086
       numeral5.png: 7893153474798392062
       laserGreen04.png: 7989082572873131969
       cockpitRed_1.png: 5687129572882118783
@@ -6398,6 +6398,7 @@ TextureImporter:
       railgunIcon: -6263555544328688002
       laserGreen14.png: -8188983256552683446
       BigMeteor2: -245694023857363278
+      railgunProjectile: 7869088444859223245
       playerLife3_red.png: 649100677075123729
       powerupYellow_bolt.png: -4422006916996271244
       wingRed_4.png: -175158354727378939
@@ -6588,7 +6589,6 @@ TextureImporter:
       things_bronze.png: 7244200078384958924
       laserGreen16.png: -7820833839027232870
       numeral6.png: -2526401654114208938
-      laserBlue10.png: 7869088444859223245
       wingBlue_2.png: 7761993133193807061
       laserBlue03.png: -1020090064025625753
       pill_yellow.png: 8832732456259409462
