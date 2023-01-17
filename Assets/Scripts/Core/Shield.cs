@@ -6,13 +6,15 @@ namespace SpaceShooter.Core
 {
     public class Shield : MonoBehaviour, IDamageable
     {
+        public event Action OnTakeDamage;
         public event Action ShieldDestroy;
         [SerializeField] private int maxHealth;
 
         private int _currentHealth;
 
         private void OnEnable() => _currentHealth = maxHealth;
-      
+
+        
         public bool CanDamage() => true;
         
         public void TakeDamage(int damage)
@@ -21,6 +23,7 @@ namespace SpaceShooter.Core
                 Debug.LogError("Damage cannot be negative or zero");
             
             _currentHealth -= damage;
+            OnTakeDamage?.Invoke();
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;

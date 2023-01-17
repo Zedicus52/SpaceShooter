@@ -407,7 +407,7 @@ Transform:
   m_Children:
   - {fileID: 1448721649}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &221254080
 MonoBehaviour:
@@ -1022,7 +1022,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678501248
 GameObject:
@@ -1563,6 +1563,8 @@ GameObject:
   - component: {fileID: 1185403981}
   - component: {fileID: 1185403980}
   - component: {fileID: 1185403979}
+  - component: {fileID: 1185403983}
+  - component: {fileID: 1185403982}
   m_Layer: 0
   m_Name: ShieldLevel1
   m_TagString: Untagged
@@ -1687,6 +1689,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+--- !u!114 &1185403982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185403976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bfe0a3ee543f0b9f6fc93594f55f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: TakeDamage
+--- !u!95 &1185403983
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185403976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbe24b700569de048bff09cea49cb7ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1208405001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,6 +1735,8 @@ GameObject:
   - component: {fileID: 1208405006}
   - component: {fileID: 1208405005}
   - component: {fileID: 1208405004}
+  - component: {fileID: 1208405008}
+  - component: {fileID: 1208405007}
   m_Layer: 0
   m_Name: ShieldLevel2
   m_TagString: Untagged
@@ -1824,6 +1861,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
+--- !u!114 &1208405007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208405001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bfe0a3ee543f0b9f6fc93594f55f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: TakeDamage
+--- !u!95 &1208405008
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208405001}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbe24b700569de048bff09cea49cb7ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1213708935 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5507238321343725800, guid: 991ec61f6c6675140bd7ff444ea297a5, type: 3}
@@ -3033,6 +3103,8 @@ GameObject:
   - component: {fileID: 1945478808}
   - component: {fileID: 1945478810}
   - component: {fileID: 1945478811}
+  - component: {fileID: 1945478813}
+  - component: {fileID: 1945478812}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3253,6 +3325,39 @@ MonoBehaviour:
   - {fileID: 1185403981}
   - {fileID: 1208405006}
   - {fileID: 2055269754}
+--- !u!114 &1945478812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945478801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bfe0a3ee543f0b9f6fc93594f55f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: TakeDamage
+--- !u!95 &1945478813
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945478801}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 911cf869d27e779449862308bc86aca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1946227063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8664200345521403088, guid: 9178b038ff2e7284f81122d886bfb5f9, type: 3}
@@ -3455,6 +3560,8 @@ GameObject:
   - component: {fileID: 2055269754}
   - component: {fileID: 2055269753}
   - component: {fileID: 2055269752}
+  - component: {fileID: 2055269756}
+  - component: {fileID: 2055269755}
   m_Layer: 0
   m_Name: ShieldLevel3
   m_TagString: Untagged
@@ -3579,6 +3686,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
+--- !u!114 &2055269755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055269749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bfe0a3ee543f0b9f6fc93594f55f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: TakeDamage
+--- !u!95 &2055269756
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055269749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbe24b700569de048bff09cea49cb7ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2124570607
 GameObject:
   m_ObjectHideFlags: 0

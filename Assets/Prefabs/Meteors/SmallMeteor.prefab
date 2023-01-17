@@ -77,6 +77,8 @@ GameObject:
   - component: {fileID: 4199687598982772150}
   - component: {fileID: 3430652051092583852}
   - component: {fileID: 7487129016470975867}
+  - component: {fileID: 2141250772650472968}
+  - component: {fileID: -6971469268493249550}
   m_Layer: 0
   m_Name: SmallMeteor
   m_TagString: Untagged
@@ -235,3 +237,36 @@ MonoBehaviour:
   sprites:
   - {fileID: 3158903393190652685, guid: 16dea6ecf2c6a5d41aa30f4c3509af3d, type: 3}
   - {fileID: -4431388003160355013, guid: 16dea6ecf2c6a5d41aa30f4c3509af3d, type: 3}
+--- !u!95 &2141250772650472968
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564690673355711360}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 911cf869d27e779449862308bc86aca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6971469268493249550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564690673355711360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bfe0a3ee543f0b9f6fc93594f55f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: TakeDamage

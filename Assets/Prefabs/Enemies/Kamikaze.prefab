@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: -7891861413853137553}
   - component: {fileID: 1791744675}
   - component: {fileID: 2875843541120179652}
+  - component: {fileID: 4180431822137371703}
+  - component: {fileID: -4510805884141094241}
   m_Layer: 0
   m_Name: Kamikaze
   m_TagString: Untagged
@@ -105,6 +107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f904e30135748cab25c8ca306745586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebug: 0
+  bonuses:
+    list: []
+  bonusDropChance: 0
   speed: 4.5
   maxHealth: 10
 --- !u!50 &2085273361797085821
@@ -213,6 +219,39 @@ MonoBehaviour:
   projectile: {fileID: 4507367942700363806, guid: cd27a168972fec34b86dac03acb4cb92, type: 3}
   basicCount: 0
   invertedDirectionForProjectile: 0
+--- !u!95 &4180431822137371703
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085273361797085823}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 911cf869d27e779449862308bc86aca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4510805884141094241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085273361797085823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bfe0a3ee543f0b9f6fc93594f55f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: TakeDamage
 --- !u!1 &2085273362201971731
 GameObject:
   m_ObjectHideFlags: 0

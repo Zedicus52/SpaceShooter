@@ -7,6 +7,7 @@ namespace SpaceShooter.Core
     public class PlayerHealth : MonoBehaviour, IDamageable, IHealth
     {
         public event Action<int> HealthChanged;
+        public event Action OnTakeDamage;
         public bool IsAlive => _currentHealth > 0;
         [SerializeField] private int maxLevelForMaxHealthBonus;
         
@@ -28,9 +29,10 @@ namespace SpaceShooter.Core
         {
             _currentHealth = 0; 
             RestartTimer();
-        } 
+        }
 
 
+        
         public bool CanDamage() =>  _currentTime.Equals(takeDamageDelay);
        
         private void Update()
@@ -64,6 +66,7 @@ namespace SpaceShooter.Core
                 Debug.LogError("Damage cannot be negative or zero");
             
             _currentHealth -= damage;
+            OnTakeDamage?.Invoke();
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;

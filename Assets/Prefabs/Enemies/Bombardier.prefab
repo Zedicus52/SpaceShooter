@@ -91,6 +91,8 @@ GameObject:
   - component: {fileID: 8908451037857122567}
   - component: {fileID: 5454522157321906393}
   - component: {fileID: 42199179641680175}
+  - component: {fileID: -5821791522508509686}
+  - component: {fileID: -2714077743522310015}
   m_Layer: 0
   m_Name: Bombardier
   m_TagString: Untagged
@@ -310,6 +312,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 8908451039007827272}
+--- !u!95 &-5821791522508509686
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908451037857122566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 911cf869d27e779449862308bc86aca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2714077743522310015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908451037857122566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bfe0a3ee543f0b9f6fc93594f55f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: TakeDamage
 --- !u!1 &8908451038039506130
 GameObject:
   m_ObjectHideFlags: 0

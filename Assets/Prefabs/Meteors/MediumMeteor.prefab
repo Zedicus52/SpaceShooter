@@ -77,6 +77,8 @@ GameObject:
   - component: {fileID: 6678031721217588963}
   - component: {fileID: 2337304753132822408}
   - component: {fileID: 4321278759266929321}
+  - component: {fileID: -862312109967314650}
+  - component: {fileID: 1050854853106634286}
   m_Layer: 0
   m_Name: MediumMeteor
   m_TagString: Untagged
@@ -235,3 +237,36 @@ MonoBehaviour:
   sprites:
   - {fileID: 6864235435029977924, guid: 16dea6ecf2c6a5d41aa30f4c3509af3d, type: 3}
   - {fileID: -7611726189556237606, guid: 16dea6ecf2c6a5d41aa30f4c3509af3d, type: 3}
+--- !u!95 &-862312109967314650
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917396483589291500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 911cf869d27e779449862308bc86aca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1050854853106634286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917396483589291500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bfe0a3ee543f0b9f6fc93594f55f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: TakeDamage

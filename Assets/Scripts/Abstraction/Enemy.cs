@@ -14,6 +14,7 @@ namespace SpaceShooter.Abstraction
     {
         public event Action<int> HealthChanged;
         public event Action<Enemy> EnemyDestroyed;
+        public event Action OnTakeDamage;
 
         public Vector3 SpriteSize { get; private set; }
         public BorderFloat Border { get; private set; }
@@ -103,7 +104,7 @@ namespace SpaceShooter.Abstraction
             Border.ExpendUpSide(SpriteSize.y*0.5f);
             Border.ExpendDownSide(SpriteSize.y*0.5f);
         }
-
+        
         public virtual bool CanDamage() => true;
        
 
@@ -117,6 +118,7 @@ namespace SpaceShooter.Abstraction
 
             
             _currentHealth -= damage;
+            OnTakeDamage?.Invoke();
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;

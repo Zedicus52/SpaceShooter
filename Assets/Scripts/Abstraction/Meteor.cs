@@ -11,7 +11,7 @@ namespace SpaceShooter.Abstraction
     public abstract class Meteor : MonoBehaviour, IDamageable, IPauseHandler, IHealth
     {
         public event Action<int> HealthChanged;
-
+        public event Action OnTakeDamage;
         protected event Action<Vector3> OnMeteorDestroy; 
         public BorderFloat Border { get; private set; }
         public Vector3 SpriteSize { get; private set; }
@@ -50,6 +50,7 @@ namespace SpaceShooter.Abstraction
             _transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
         }
 
+        
         public virtual bool CanDamage() => true;
         
         public virtual void TakeDamage(int damage)
@@ -62,6 +63,7 @@ namespace SpaceShooter.Abstraction
 
             
             _currentHealth -= damage;
+            OnTakeDamage?.Invoke();
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;

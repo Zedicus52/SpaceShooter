@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 742231180758350121}
   - component: {fileID: 742231180758350122}
   - component: {fileID: 1681554653226528028}
+  - component: {fileID: 1567158301973058580}
+  - component: {fileID: 9075316440594881172}
   m_Layer: 0
   m_Name: Gunner
   m_TagString: Untagged
@@ -233,6 +235,39 @@ MonoBehaviour:
   - {fileID: 7774770200307891486, guid: 16dea6ecf2c6a5d41aa30f4c3509af3d, type: 3}
   - {fileID: 9053789733962595892, guid: 16dea6ecf2c6a5d41aa30f4c3509af3d, type: 3}
   - {fileID: -4522803996747795011, guid: 16dea6ecf2c6a5d41aa30f4c3509af3d, type: 3}
+--- !u!95 &1567158301973058580
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742231180758350097}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 911cf869d27e779449862308bc86aca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9075316440594881172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742231180758350097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bfe0a3ee543f0b9f6fc93594f55f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerName: TakeDamage
 --- !u!1 &742231180971882939
 GameObject:
   m_ObjectHideFlags: 0
