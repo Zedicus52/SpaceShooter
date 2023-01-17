@@ -25,14 +25,13 @@ namespace SpaceShooter.Abstraction
             if(_isInitialized)
                 return;
             SpriteRenderer component = GetComponent<SpriteRenderer>();
-            Collider2D component1 = GetComponent<Collider2D>();
+            //Collider2D component1 = GetComponent<Collider2D>();
             _transform = transform;
             SpriteHeight = component.sprite.bounds.size.y;
             if (isInverted)
             {
                 speed *= -1;
-                component.flipY = true;
-                component1.offset = new Vector2(component1.offset.x, component1.offset.y * -1);
+                _transform.Rotate(Vector3.forward,180);
             }
             
             ProjectContext.Instance.PauseManager.Register(this);

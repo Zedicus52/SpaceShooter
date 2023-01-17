@@ -209,7 +209,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -227,8 +227,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1934158951
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: -2287361923395422921, guid: 16dea6ecf2c6a5d41aa30f4c3509af3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -334,6 +334,7 @@ MonoBehaviour:
   bonusDropChance: 0
   speed: 3
   maxHealth: 10
+  destroyParticle: {fileID: 0}
 --- !u!114 &1325659895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +456,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1797275157
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1942714214266086735
