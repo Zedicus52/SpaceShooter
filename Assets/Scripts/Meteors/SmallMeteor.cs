@@ -9,6 +9,7 @@ namespace SpaceShooter.Meteors
         protected override void MeteorDestroy() 
         {
             gameObject.SetActive(false);
+            OnMeteorDestroyInvoker(transform.position);
             ProjectContext.Instance.ScoreManager.AddPoints(ScoreInfo.SmallMeteorScore);
         }
     }

@@ -1,6 +1,8 @@
 using System;
 using SpaceShooter.Core;
 using SpaceShooter.DataStructures;
+using SpaceShooter.GFX;
+using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -19,6 +21,7 @@ namespace SpaceShooter.Abstraction
         public bool IsAlive => _currentHealth > 0;
         
         [SerializeField] private int maxHealth;
+        [SerializeField] private Particle destroyParticle;
         [SerializeField] private float rotationSpeed;
         [SerializeField] private int maxDamage;
         [SerializeField] private int minDamage;
@@ -114,6 +117,7 @@ namespace SpaceShooter.Abstraction
         protected virtual void OnMeteorDestroyInvoker(Vector3 obj)
         {
             OnMeteorDestroy?.Invoke(obj);
+            Instantiate(destroyParticle, transform.position, Quaternion.identity);
         }
 
         public virtual void SetPaused(bool isPaused) => IsPaused = isPaused;

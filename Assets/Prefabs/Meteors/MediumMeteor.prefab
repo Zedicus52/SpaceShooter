@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  destroyParticle: {fileID: 1387638871217616844, guid: 880d163872ad304458b65815b2925f5a, type: 3}
   rotationSpeed: 50
   maxDamage: 7
   minDamage: 3

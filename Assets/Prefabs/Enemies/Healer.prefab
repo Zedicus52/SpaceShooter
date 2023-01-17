@@ -440,6 +440,7 @@ MonoBehaviour:
   bonusDropChance: 0.5
   speed: 1.3
   maxHealth: 10
+  destroyParticle: {fileID: 5429218789917626022, guid: acedb5aa0a3d1f64c99a42e64e8cbae5, type: 3}
   healAmount: 3
   healDelay: 10
   lifeTime: 25

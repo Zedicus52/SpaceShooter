@@ -113,6 +113,7 @@ MonoBehaviour:
   bonusDropChance: 0
   speed: 4.5
   maxHealth: 10
+  destroyParticle: {fileID: 5429218789917626022, guid: acedb5aa0a3d1f64c99a42e64e8cbae5, type: 3}
 --- !u!50 &2085273361797085821
 Rigidbody2D:
   serializedVersion: 4

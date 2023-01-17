@@ -3,6 +3,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using SpaceShooter.Core;
 using SpaceShooter.DataStructures;
+using SpaceShooter.GFX;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -27,6 +28,7 @@ namespace SpaceShooter.Abstraction
         [SerializeField] protected float bonusDropChance;
         [SerializeField] protected float speed;
         [SerializeField] protected int maxHealth;
+        [SerializeField] protected Particle destroyParticle;
         protected Transform _transform;
         protected Weapon _weapon;
 
@@ -161,6 +163,7 @@ namespace SpaceShooter.Abstraction
         protected virtual void OnEnemyDestroyed()
         {
             EnemyDestroyed?.Invoke(this);
+            Instantiate(destroyParticle, _transform.position, Quaternion.identity);
             if (bonuses.Count != 0)
             {
                 if (Random.value < bonusDropChance)
