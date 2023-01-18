@@ -27,11 +27,14 @@ namespace SpaceShooter.Abstraction
         [SerializeField] private float rotationSpeed;
         [SerializeField] private int maxDamage;
         [SerializeField] private int minDamage;
+        [SerializeField] private float giveDamageDelay;
         [SerializeField] protected AudioClip destroySound;
 
         private Transform _transform;
         private int _currentHealth;
         private SpriteRenderer _spriteRenderer;
+        private float _currentTime;
+        private bool _timerIsWork;
 
         private void Awake()
         {
@@ -49,6 +52,15 @@ namespace SpaceShooter.Abstraction
             if(IsPaused)
                 return;
 
+            if (_timerIsWork)
+            {
+                _currentTime -= Time.deltaTime;
+                if (_currentTime <= 0)
+                {
+                    RestartTimer();
+                }
+            }
+            
             if (_transform.position.y >= Border.UpSide || _transform.position.y <= Border.DownSide)
             {
                 gameObject.SetActive(false);
@@ -58,8 +70,12 @@ namespace SpaceShooter.Abstraction
             _transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
         }
 
-        
-        public virtual bool CanDamage() => true;
+        private void RestartTimer()
+        {
+            _currentTime = giveDamageDelay;
+            _timerIsWork = false;
+        }
+        public virtual bool CanDamage() => _currentTime.Equals(giveDamageDelay);
         
         public virtual void TakeDamage(int damage)
         {
@@ -75,7 +91,7 @@ namespace SpaceShooter.Abstraction
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;
-                MeteorDestroy();
+                MeteorDestroy(true);
             }
             OnHealthChanged(_currentHealth);
         }
@@ -86,18 +102,21 @@ namespace SpaceShooter.Abstraction
             {
                 if(obj is Meteor)
                     return;
-                if (obj.CanDamage())
+                if (obj.CanDamage() && CanDamage())
                 {
                     obj.TakeDamage(Random.Range(minDamage, maxDamage));
-                    MeteorDestroy();
+                    MeteorDestroy(false);
+                    _timerIsWork = true;
                 }
+                
             }
         }
 
-        protected abstract void MeteorDestroy();
+        protected abstract void MeteorDestroy(bool destroyByPlayer);
 
         protected virtual void OnEnable()
         {
+            RestartTimer();
             _spriteRenderer.color = Color.white;
             _currentHealth = maxHealth;
             OnHealthChanged(_currentHealth);
@@ -105,6 +124,8 @@ namespace SpaceShooter.Abstraction
 
         protected virtual void OnDisable()
         {
+            _spriteRenderer.color = Color.white;
+            RestartTimer();
             _currentHealth = 0;
             OnHealthChanged(_currentHealth);
         }

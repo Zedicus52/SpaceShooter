@@ -18,7 +18,12 @@ namespace SpaceShooter.Enemies
         private float _currentTime;
         private bool _timerIsWork;
 
-
+        protected override void Awake()
+        {
+            Score = ScoreInfo.HealerScore;
+            base.Awake();
+        }
+        
         public override void OnEnable()
         {
            base.OnEnable();

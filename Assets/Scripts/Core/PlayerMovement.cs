@@ -1,6 +1,4 @@
-using System;
 using SpaceShooter.Abstraction;
-using SpaceShooter.UI;
 using UnityEngine;
 
 namespace SpaceShooter.Core
@@ -9,8 +7,6 @@ namespace SpaceShooter.Core
     {
         public bool IsPaused { get; private set; }
         [SerializeField] private float horizontalMovementSpeed;
-        [SerializeField] private float verticalMovementSpeed;
-        [SerializeField] private Joystick joystick;
         private Vector2 _bounds;
         private Transform _transform;
         private Vector3 _oldPos;
@@ -36,8 +32,7 @@ namespace SpaceShooter.Core
                 touchPos.z = 0;
                 touchPos.x = Mathf.Clamp(touchPos.x, -_bounds.x, _bounds.x);
                 touchPos.y = Mathf.Clamp(touchPos.y, -_bounds.y, _bounds.y);
-                Debug.Log(Mathf.Abs(_oldPos.x - touchPos.x));
-                if (Mathf.Abs(_oldPos.x - touchPos.x) < 1.5f || Mathf.Abs(_oldPos.y - touchPos.y) < 1.5f)
+                if (Mathf.Abs(_oldPos.x - touchPos.x) < 1.0f || Mathf.Abs(_oldPos.y - touchPos.y) < 1.0f)
                 {
                     _transform.position = Vector3.Lerp(_transform.position, touchPos,
                         horizontalMovementSpeed * Time.deltaTime);

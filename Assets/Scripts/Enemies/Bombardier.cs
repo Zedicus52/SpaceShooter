@@ -23,6 +23,7 @@ namespace SpaceShooter.Enemies
 
         protected override void Awake()
         {
+            Score = ScoreInfo.BombardierScore;
             _playerTransform = FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
             base.Awake();
         }
@@ -41,6 +42,7 @@ namespace SpaceShooter.Enemies
         {
             if(_canMove == false)
                 return;
+            
 
             if (_timerIsWork)
             {

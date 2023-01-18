@@ -18,11 +18,12 @@ namespace SpaceShooter.Meteors
             OnMeteorDestroy -= MeteorsSpawner.Instance.OnSmallMeteorDestroy;
             base.OnDisable();
         }
-        protected override void MeteorDestroy() 
+        protected override void MeteorDestroy(bool destroyByPlayer) 
         {
             OnMeteorDestroyInvoker(this);
             gameObject.SetActive(false);
-            ProjectContext.Instance.ScoreManager.AddPoints(ScoreInfo.SmallMeteorScore);
+            if(destroyByPlayer)
+                ProjectContext.Instance.ScoreManager.AddPoints(ScoreInfo.SmallMeteorScore);
         }
     }
 }

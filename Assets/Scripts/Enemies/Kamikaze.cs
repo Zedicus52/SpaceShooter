@@ -1,6 +1,7 @@
 using System;
 using SpaceShooter.Abstraction;
 using SpaceShooter.Core;
+using SpaceShooter.DataStructures;
 using SpaceShooter.Weapons;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace SpaceShooter.Enemies
         protected override void Awake()
         {
             _playerTransform = FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
+            Score = ScoreInfo.KamikazeScore;
             base.Awake();
         }
 

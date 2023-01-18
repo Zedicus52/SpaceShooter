@@ -17,6 +17,7 @@ namespace SpaceShooter.Abstraction
         public event Action<Enemy> EnemyDestroyed;
         public event Action OnTakeDamage;
 
+        public int Score { get; protected set; }
         public Vector3 SpriteSize { get; private set; }
         public BorderFloat Border { get; private set; }
         public AudioClip DestroyClip => destroyClip;
@@ -82,6 +83,7 @@ namespace SpaceShooter.Abstraction
         protected virtual void OnDisable()
         {
             _canMove = false;
+            _spriteRenderer.color = Color.white;
             _enemyCanShoot = false;
             if(_weapon != null)
                 StopCoroutine(_shootCoroutine);
@@ -149,7 +151,7 @@ namespace SpaceShooter.Abstraction
             OnHealthChanged(_currentHealth);
 
         }
-
+        
         public virtual void SetPaused(bool isPaused)
         {
             _canMove = !isPaused;
@@ -168,6 +170,7 @@ namespace SpaceShooter.Abstraction
 
         protected virtual void OnEnemyDestroyed()
         {
+            ProjectContext.Instance.ScoreManager.AddPoints(Score);
             EnemyDestroyed?.Invoke(this);
             Instantiate(destroyParticle, _transform.position, Quaternion.identity);
             if (bonuses.Count != 0)

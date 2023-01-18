@@ -11,6 +11,12 @@ namespace SpaceShooter.Enemies
     {
         private bool _isMoveRight;
 
+        protected override void Awake()
+        {
+            Score = ScoreInfo.GunnerScore;
+            base.Awake();
+        }
+
         public override void OnEnable()
         {
             SetDirection();

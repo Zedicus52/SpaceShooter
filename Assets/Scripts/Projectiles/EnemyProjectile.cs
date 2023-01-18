@@ -12,7 +12,7 @@ namespace SpaceShooter.Projectiles
             
             if (other.TryGetComponent(out IDamageable obj))
             {
-                if(obj is Enemy)
+                if(obj is Enemy or Meteor)
                     return;
                 obj.TakeDamage(GetDamage());
                 gameObject.SetActive(false);

@@ -67,7 +67,7 @@ namespace SpaceShooter.Projectiles
             {
                 if (col.TryGetComponent(out IDamageable obj))
                 {
-                    if(obj is Enemy)
+                    if(obj is Enemy or Meteor)
                         continue;
                     obj.TakeDamage(GetDamage());
                 }

@@ -321,6 +321,7 @@ MonoBehaviour:
   rotationSpeed: 50
   maxDamage: 7
   minDamage: 3
+  giveDamageDelay: 2
   destroySound: {fileID: 8300000, guid: f643fcfa90560dd40be84914bab4455b, type: 3}
 --- !u!60 &2337304753132822408
 PolygonCollider2D:
