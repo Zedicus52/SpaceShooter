@@ -1,5 +1,6 @@
 using SpaceShooter.Abstraction;
 using SpaceShooter.Core;
+using SpaceShooter.GFX;
 using UnityEngine;
 
 namespace SpaceShooter.Bonuses
@@ -14,6 +15,7 @@ namespace SpaceShooter.Bonuses
         {
             if (col.TryGetComponent(out PlayerHealth player))
             {
+                EffectAudioSource.Instance.PlayOneShot(getSound);
                 float percent = Random.Range(minIncreasePercent, maxIncreasePercent);
                 int healthForIncrease = Mathf.FloorToInt(player.GetMaxHealth() * percent * 0.01f);
                 player.IncreaseMaxHealth(healthForIncrease);

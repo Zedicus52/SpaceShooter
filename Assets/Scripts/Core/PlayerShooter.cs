@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using SpaceShooter.Abstraction;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SpaceShooter.Core
 {
@@ -13,6 +14,7 @@ namespace SpaceShooter.Core
         public PlayerWeapon CurrentWeapon => currentWeapon;
         [SerializeField] private Transform parentForProjectiles;
         [SerializeField] private PlayerWeapon currentWeapon;
+        [FormerlySerializedAs("source")] [SerializeField] private AudioSource audioSource;
         private bool _canShoot;
         private void OnEnable()
         {
@@ -26,6 +28,7 @@ namespace SpaceShooter.Core
             while (_canShoot)
             {
                 currentWeapon.Shoot();
+                audioSource.PlayOneShot(currentWeapon.ShootSound);
                 yield return new WaitForSeconds(currentWeapon.ShootDelay);
             }
         }
@@ -39,7 +42,6 @@ namespace SpaceShooter.Core
             currentWeapon = weapon;
             currentWeapon.InitializeWeapon(parentForProjectiles);
             _canShoot = true;
-            //StartCoroutine(ShootCycle());
         }
     }
 }

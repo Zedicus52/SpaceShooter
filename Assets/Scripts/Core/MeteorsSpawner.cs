@@ -22,6 +22,8 @@ namespace SpaceShooter.Core
         [SerializeField] private Transform meteorsParent;
         [SerializeField] private int basicCount;
 
+        [SerializeField] private AudioSource audioSource;
+
         private Pool<Meteor> _bigMeteorsPool;
         private Pool<Meteor> _mediumMeteorsPool;
         private Pool<Meteor> _smallMeteorsPool;
@@ -98,16 +100,17 @@ namespace SpaceShooter.Core
             meteor.gameObject.SetActive(true);
         }
         
-        public void OnBigMeteorDestroy(Vector3 destroyPosition)
+        public void OnBigMeteorDestroy(Meteor destroyedMeteor)
         {
             if(IsPaused)
                 return;
+            audioSource.PlayOneShot(destroyedMeteor.DestroySound);
             for (int i = 0; i < 3; i++)
             {
                 Vector3 direction = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-1f, 0.2f));
                 var meteor = _mediumMeteorsPool.GetObject();
                 meteor.InitializeMeteor(_border);
-                meteor.transform.position = destroyPosition+direction;
+                meteor.transform.position = destroyedMeteor.transform.position+direction;
                 meteor.gameObject.SetActive(true);
                 if (meteor.TryGetComponent(out Rigidbody2D rb))
                 {
@@ -116,16 +119,17 @@ namespace SpaceShooter.Core
                 }
             }
         }
-        public void OnMediumMeteorDestroy(Vector3 destroyPosition)
+        public void OnMediumMeteorDestroy(Meteor destroyedMeteor)
         {
             if(IsPaused)
                 return;
+            audioSource.PlayOneShot(destroyedMeteor.DestroySound);
             for (int i = 0; i < 3; i++)
             {
                 Vector3 direction = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-1f, 0.2f));
                 var meteor = _smallMeteorsPool.GetObject();
                 meteor.InitializeMeteor(_border);
-                meteor.transform.position = destroyPosition+direction;
+                meteor.transform.position = destroyedMeteor.transform.position+direction;
                 meteor.gameObject.SetActive(true);
                 if (meteor.TryGetComponent(out Rigidbody2D rb))
                 {
@@ -134,6 +138,8 @@ namespace SpaceShooter.Core
                 }
             }
         }
+        
+        public void OnSmallMeteorDestroy(Meteor destroyedMeteor) => audioSource.PlayOneShot(destroyedMeteor.DestroySound);
 
         public void SetPaused(bool isPaused) => IsPaused = isPaused;
       

@@ -12,6 +12,7 @@ namespace SpaceShooter.Abstraction
         [SerializeField] protected float spawnDelay;
         [SerializeField] protected Enemy prefab;
         [SerializeField] protected Transform parentObjectForProjectiles;
+        [SerializeField] protected AudioSource audioSource;
         
         protected int _currentCount;
         protected Pool<Enemy> _pool;
@@ -59,6 +60,7 @@ namespace SpaceShooter.Abstraction
         protected virtual void OnEnemyDestroy(Enemy enemy)
         {
             _currentCount -= 1;
+            audioSource.PlayOneShot(enemy.DestroyClip);
             enemy.EnemyDestroyed -= OnEnemyDestroy;
         }
 

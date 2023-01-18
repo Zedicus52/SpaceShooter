@@ -1,5 +1,6 @@
 using SpaceShooter.Abstraction;
 using SpaceShooter.Core;
+using SpaceShooter.GFX;
 using UnityEngine;
 
 namespace SpaceShooter.Bonuses
@@ -11,6 +12,7 @@ namespace SpaceShooter.Bonuses
         {
             if (col.TryGetComponent(out PlayerShooter shooter))
             {
+                EffectAudioSource.Instance.PlayOneShot(getSound);
                 shooter.OnWeaponChanged(weapon);
                 Destroy(gameObject);
             }

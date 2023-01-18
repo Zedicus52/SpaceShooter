@@ -170,10 +170,10 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
   m_Color: {r: 0, g: 0.86123943, b: 1, a: 1}
-  m_Intensity: 1.3
+  m_Intensity: 1.2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 15ac019d65623b379913b78c
+  m_ApplyToSortingLayers: 15ac019d65623b379913b78ce90a6b2c1f7b62369fb8c2e7
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

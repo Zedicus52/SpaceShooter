@@ -4,6 +4,7 @@ using SpaceShooter.DataStructures;
 using SpaceShooter.GFX;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace SpaceShooter.Abstraction
@@ -14,23 +15,27 @@ namespace SpaceShooter.Abstraction
     {
         public event Action<int> HealthChanged;
         public event Action OnTakeDamage;
-        protected event Action<Vector3> OnMeteorDestroy; 
+        protected event Action<Meteor> OnMeteorDestroy; 
         public BorderFloat Border { get; private set; }
         public Vector3 SpriteSize { get; private set; }
         public bool IsPaused { get; private set; }
         public bool IsAlive => _currentHealth > 0;
+        public AudioClip DestroySound => destroySound;
         
         [SerializeField] private int maxHealth;
         [SerializeField] private Particle destroyParticle;
         [SerializeField] private float rotationSpeed;
         [SerializeField] private int maxDamage;
         [SerializeField] private int minDamage;
+        [SerializeField] protected AudioClip destroySound;
 
         private Transform _transform;
         private int _currentHealth;
+        private SpriteRenderer _spriteRenderer;
 
         private void Awake()
         {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
             _transform = transform;
         }
 
@@ -93,6 +98,7 @@ namespace SpaceShooter.Abstraction
 
         protected virtual void OnEnable()
         {
+            _spriteRenderer.color = Color.white;
             _currentHealth = maxHealth;
             OnHealthChanged(_currentHealth);
         }
@@ -114,7 +120,7 @@ namespace SpaceShooter.Abstraction
             Border.ExpendUpSide(SpriteSize.y);
         }
 
-        protected virtual void OnMeteorDestroyInvoker(Vector3 obj)
+        protected virtual void OnMeteorDestroyInvoker(Meteor obj)
         {
             OnMeteorDestroy?.Invoke(obj);
             Instantiate(destroyParticle, transform.position, Quaternion.identity);

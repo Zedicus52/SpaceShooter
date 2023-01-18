@@ -19,6 +19,7 @@ namespace SpaceShooter.Abstraction
 
         public Vector3 SpriteSize { get; private set; }
         public BorderFloat Border { get; private set; }
+        public AudioClip DestroyClip => destroyClip;
         public bool IsAlive => _currentHealth > 0;
 
         [SerializeField] private bool isDebug;
@@ -29,6 +30,8 @@ namespace SpaceShooter.Abstraction
         [SerializeField] protected float speed;
         [SerializeField] protected int maxHealth;
         [SerializeField] protected Particle destroyParticle;
+        [SerializeField] protected AudioClip destroyClip;
+        [SerializeField] protected AudioSource audioSource;
         protected Transform _transform;
         protected Weapon _weapon;
 
@@ -36,11 +39,13 @@ namespace SpaceShooter.Abstraction
         protected bool _enemyCanShoot;
         protected bool _canMove;
         protected int _currentHealth;
+        private SpriteRenderer _spriteRenderer;
 
         protected virtual void Awake()
         {
             _shootCoroutine = Shoot();
             _transform = GetComponent<Transform>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         protected void Initialize(Transform projectileParentObject)
@@ -63,7 +68,7 @@ namespace SpaceShooter.Abstraction
         {
             if(isDebug)
                 Initialize(transform);
-            
+            _spriteRenderer.color = Color.white;
             _currentHealth = maxHealth;
             _canMove = true;
             _enemyCanShoot = false;
@@ -88,6 +93,7 @@ namespace SpaceShooter.Abstraction
             while(_enemyCanShoot)
             {
                 _weapon.Shoot();
+                audioSource.PlayOneShot(_weapon.ShootSound);
                 yield return new WaitForSeconds(_weapon.ShootDelay);
             }
         }

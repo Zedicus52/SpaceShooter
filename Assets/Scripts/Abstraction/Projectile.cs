@@ -25,7 +25,6 @@ namespace SpaceShooter.Abstraction
             if(_isInitialized)
                 return;
             SpriteRenderer component = GetComponent<SpriteRenderer>();
-            //Collider2D component1 = GetComponent<Collider2D>();
             _transform = transform;
             SpriteHeight = component.sprite.bounds.size.y;
             if (isInverted)

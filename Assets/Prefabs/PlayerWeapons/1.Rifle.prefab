@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5507238321343725799
 Transform:
   m_ObjectHideFlags: 0
@@ -48,5 +48,6 @@ MonoBehaviour:
   projectile: {fileID: 6853591445027876705, guid: e48ef8cce5d2b8c4aaa949e54e45d2c4, type: 3}
   basicCount: 10
   invertedDirectionForProjectile: 0
+  shootSound: {fileID: 8300000, guid: 425fca5da8f41fb489826cc50ec23b68, type: 3}
   maxLevelForUpgrade: 3
   maxLevelForDelayBonus: 3

@@ -7,6 +7,7 @@ namespace SpaceShooter.Abstraction
     public abstract class Bonus : MonoBehaviour
     {
         [SerializeField] private float movementSpeed;
+        [SerializeField] protected AudioClip getSound;
         protected BorderFloat _border;
         private Transform _transform;
 

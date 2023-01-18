@@ -13,6 +13,7 @@ namespace SpaceShooter.Core
         
         [SerializeField] private int maxHealth;
         [SerializeField] private float takeDamageDelay;
+        [SerializeField] private AudioSource audioSource;
 
         private int _currentHealth;
         private float _currentTime;
@@ -67,6 +68,7 @@ namespace SpaceShooter.Core
             
             _currentHealth -= damage;
             OnTakeDamage?.Invoke();
+            audioSource.Play();
             if (_currentHealth <= 0)
             {
                 _currentHealth = 0;

@@ -8,10 +8,12 @@ namespace SpaceShooter.Abstraction
     {
         public float ShootDelay => shootDelay;
         public Projectile Projectile => projectile;
+        public AudioClip ShootSound => shootSound;
         [SerializeField] protected float shootDelay;
         [SerializeField] protected Projectile projectile;
         [SerializeField] protected int basicCount;
         [SerializeField] protected bool invertedDirectionForProjectile;
+        [SerializeField] protected AudioClip shootSound;
 
         protected Pool<Projectile> _pool;
         private bool _isInitialized;

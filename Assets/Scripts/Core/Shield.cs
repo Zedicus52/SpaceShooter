@@ -9,6 +9,7 @@ namespace SpaceShooter.Core
         public event Action OnTakeDamage;
         public event Action ShieldDestroy;
         [SerializeField] private int maxHealth;
+        [SerializeField] private AudioSource audioSource;
 
         private int _currentHealth;
 
@@ -23,6 +24,7 @@ namespace SpaceShooter.Core
                 Debug.LogError("Damage cannot be negative or zero");
             
             _currentHealth -= damage;
+            audioSource.Play();
             OnTakeDamage?.Invoke();
             if (_currentHealth <= 0)
             {

@@ -50,6 +50,12 @@ TagManager:
   - name: Player
     uniqueID: 926638693
     locked: 0
+  - name: Bonuses
+    uniqueID: 745212649
+    locked: 0
+  - name: Meteors
+    uniqueID: 912423711
+    locked: 0
   - name: Enemies
     uniqueID: 2360808345
     locked: 0
