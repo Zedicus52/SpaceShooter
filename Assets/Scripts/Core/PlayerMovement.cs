@@ -1,3 +1,4 @@
+using System;
 using SpaceShooter.Abstraction;
 using SpaceShooter.UI;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace SpaceShooter.Core
         [SerializeField] private Joystick joystick;
         private Vector2 _bounds;
         private Transform _transform;
+        private Vector3 _oldPos;
 
         private void Awake()
         {
@@ -24,16 +26,24 @@ namespace SpaceShooter.Core
         {
             if(IsPaused)
                 return;
-            Vector3 delta = new Vector3
+            
+            if (Input.touchCount > 0)
             {
-                x = joystick.Horizontal * horizontalMovementSpeed * Time.deltaTime,
-                y = joystick.Vertical * verticalMovementSpeed * Time.deltaTime
-            };
-            Vector3 newPosition = _transform.position + delta;
-            newPosition.x = Mathf.Clamp(newPosition.x, -_bounds.x, _bounds.x);
-            newPosition.y = Mathf.Clamp(newPosition.y, -_bounds.y, _bounds.y);
-            _transform.position = newPosition;
-
+                var touch = Input.touches[0];
+                if(touch.phase != TouchPhase.Moved)
+                    return;
+                var touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+                touchPos.z = 0;
+                touchPos.x = Mathf.Clamp(touchPos.x, -_bounds.x, _bounds.x);
+                touchPos.y = Mathf.Clamp(touchPos.y, -_bounds.y, _bounds.y);
+                Debug.Log(Mathf.Abs(_oldPos.x - touchPos.x));
+                if (Mathf.Abs(_oldPos.x - touchPos.x) < 1.5f || Mathf.Abs(_oldPos.y - touchPos.y) < 1.5f)
+                {
+                    _transform.position = Vector3.Lerp(_transform.position, touchPos,
+                        horizontalMovementSpeed * Time.deltaTime);
+                    _oldPos = touchPos;
+                }
+            }
         }
 
         private void CalculateBounds()
