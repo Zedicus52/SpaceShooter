@@ -27,6 +27,7 @@ namespace SpaceShooter.Core
         {
             foreach (var spawner in _spawners)
             {
+                yield return new WaitForSeconds(3);
                 spawner.enabled = true;
                 yield return new WaitForSeconds(delayBeforeSpawningNewEnemyType);
             }
