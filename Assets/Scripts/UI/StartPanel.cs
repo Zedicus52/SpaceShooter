@@ -8,7 +8,8 @@ namespace SpaceShooter.UI
 {
     public class StartPanel : MonoBehaviour, IPointerClickHandler
     {
-        [SerializeField] private List<GameObject> objectsToEnable;
+        [SerializeField] private List<GameObject> objectsToEnableWithDelay;
+        [SerializeField] private List<GameObject> objectsToEnableWithoutDelay;
         [SerializeField] private TMP_Text startText;
         private bool _canAnimate = true;
 
@@ -44,12 +45,25 @@ namespace SpaceShooter.UI
             _canAnimate = false;
             startText.gameObject.SetActive(false);
             Time.timeScale = 1.0f;
-            foreach (var obj in objectsToEnable)
+            await EnableWithDelay();
+            EnableWithoutDelay();
+            Destroy(gameObject);
+        }
+
+        private async Task EnableWithDelay()
+        {
+            foreach (var obj in objectsToEnableWithDelay)
             {
                 await Task.Delay(100);
                 obj.SetActive(true);
             }
-            Destroy(gameObject);
+        }
+        private void EnableWithoutDelay()
+        {
+            foreach (var obj in objectsToEnableWithoutDelay)
+            {
+                obj.SetActive(true);
+            }
         }
 
         

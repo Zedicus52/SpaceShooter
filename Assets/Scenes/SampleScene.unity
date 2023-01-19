@@ -3096,14 +3096,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95cdda0df1a8d0040bd423f7d4781b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToEnable:
+  objectsToEnableWithDelay:
   - {fileID: 1945478801}
   - {fileID: 221254077}
   - {fileID: 678501248}
-  - {fileID: 1335410126}
+  objectsToEnableWithoutDelay:
   - {fileID: 1499095250}
+  - {fileID: 1335410126}
   startText: {fileID: 976513096}
-  animationDelay: 2
 --- !u!114 &1365307985
 MonoBehaviour:
   m_ObjectHideFlags: 0
