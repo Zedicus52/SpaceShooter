@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -1436,7 +1436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b456df59aa7d3754882c6cbf93c4233f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 5
+  spawnDelay: 30
   meteorsMaxForce: 3
   meteorsMinForce: 2
   bigMeteor: {fileID: 5434294186260861261, guid: ca1c33ad4f4fc4642ae13aa1705bd7d0, type: 3}
@@ -3113,7 +3113,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7052241878376893574, guid: d3731cda95c75f4468c7394f6d048dd7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3801,7 +3801,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7052241878376893574, guid: d3731cda95c75f4468c7394f6d048dd7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4955,7 +4955,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7069758413524796956, guid: d3731cda95c75f4468c7394f6d048dd7, type: 2}
   m_audioClip: {fileID: 8300000, guid: 07ffffae273b78a44aab599ed2a5af92, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0

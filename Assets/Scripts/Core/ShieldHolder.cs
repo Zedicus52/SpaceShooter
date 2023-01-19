@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,7 +37,8 @@ namespace SpaceShooter.Core
         
         private void OnShieldDestroy()
         {
-            _shieldCount -= 1;
+            if(_shieldCount > 0)
+                _shieldCount -= 1;
         }
     }
 }

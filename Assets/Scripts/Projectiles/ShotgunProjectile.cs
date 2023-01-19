@@ -1,4 +1,5 @@
 using SpaceShooter.Abstraction;
+using SpaceShooter.Core;
 using SpaceShooter.DataStructures;
 using UnityEngine;
 
@@ -31,6 +32,20 @@ namespace SpaceShooter.Projectiles
             float newY = _transform.position.y + speed * Time.deltaTime;
             
             _transform.position = new Vector3(newX, newY, _transform.position.z);
+        }
+        
+        protected override void OnTriggerEnter2D(Collider2D other)
+        {
+            if(IsPaused)
+                return;
+            
+            if (other.TryGetComponent(out IDamageable obj))
+            {
+                if(obj is PlayerHealth or Shield)
+                    return;
+                obj.TakeDamage(GetDamage());
+                gameObject.SetActive(false);
+            }
         }
     }
 }

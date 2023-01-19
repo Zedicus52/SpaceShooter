@@ -1,3 +1,4 @@
+using System;
 using SpaceShooter.Abstraction;
 using SpaceShooter.Core;
 using SpaceShooter.DataStructures;
@@ -13,8 +14,16 @@ namespace SpaceShooter.Projectiles
         [SerializeField] private float waveFrequency = 2f;
         private float _theta;
         private readonly float _thetaStep = Mathf.PI / 64f;
-        private float _xOffset;
-        
+        private float _offsetX;
+
+
+        private void OnEnable()
+        {
+            if (_transform == null)
+                _transform = GetComponent<Transform>();
+            _offsetX = _transform.position.x;
+        }
+
         protected override void Update()
         {
             if(IsPaused)
@@ -23,17 +32,17 @@ namespace SpaceShooter.Projectiles
             if (_transform.position.y >= ScreenBounds.UpSide || _transform.position.y <= ScreenBounds.DownSide)
             { 
                 gameObject.SetActive(false);
+                _theta = 0;
+                
                 return;
             }
             
-            float newXPos = waveDirection * amplitude * Mathf.Sin(_theta * waveFrequency) + _xOffset;
+            float newXPos = waveDirection * amplitude * Mathf.Sin(_theta * waveFrequency) + _offsetX;
             float xStep = newXPos - _transform.position.x;
 
-            _transform.Translate(new Vector3(xStep, speed * Time.deltaTime));
+            _transform.Translate(new Vector3(xStep, speed * Time.deltaTime), Space.Self);
 
             _theta += _thetaStep;
-            
-            
         }
 
         protected override void OnTriggerEnter2D(Collider2D other)
@@ -43,7 +52,7 @@ namespace SpaceShooter.Projectiles
             
             if (other.TryGetComponent(out IDamageable obj))
             {
-                if(obj is PlayerHealth)
+                if(obj is PlayerHealth or Shield)
                     return;
                 obj.TakeDamage(GetDamage());
             }

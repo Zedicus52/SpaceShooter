@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using SpaceShooter.Abstraction;
@@ -16,6 +17,8 @@ namespace SpaceShooter.Projectiles
         private CircleCollider2D _circleCollider;
         private List<Collider2D> _colliders;
         private float _defaultRadius;
+        private bool _isDamage;
+        
         private void Awake()
         {
             _circleCollider = GetComponent<CircleCollider2D>();
@@ -61,19 +64,28 @@ namespace SpaceShooter.Projectiles
             {
                 _circleCollider.radius += explosionStep * Time.deltaTime;
             }
-
             yield return new WaitForSeconds(0.5f);
-            foreach (var col in _colliders)
+
+            try
             {
-                if (col.TryGetComponent(out IDamageable obj))
+                foreach (var col in _colliders)
                 {
-                    if(obj is Enemy or Meteor)
-                        continue;
-                    obj.TakeDamage(GetDamage());
+                    if (col.TryGetComponent(out IDamageable obj))
+                    {
+                        if (obj is Enemy or Meteor)
+                            continue;
+                        obj.TakeDamage(GetDamage());
+                    }
                 }
             }
-            gameObject.SetActive(false);
-
+            catch (Exception)
+            {
+                // ignored
+            }
+            finally
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

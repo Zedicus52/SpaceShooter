@@ -9,12 +9,21 @@ namespace SpaceShooter.Animations
     {
         [SerializeField] private string triggerName = "TakeDamage";
         private Animator _controller;
+        private IDamageable _damageable;
 
-        private void Awake() => _controller = GetComponent<Animator>();
+        private void Awake()
+        {
+            _controller = GetComponent<Animator>();
+            _damageable = GetComponent<IDamageable>();
+        } 
       
-        private void OnEnable() => GetComponent<IDamageable>().OnTakeDamage += OnTakeDamage;
-        
-        private void OnDisable() =>  GetComponent<IDamageable>().OnTakeDamage -= OnTakeDamage;
+        private void OnEnable() => _damageable.OnTakeDamage += OnTakeDamage;
+
+        private void OnDisable()
+        {
+            _controller.ResetTrigger(triggerName);
+            _damageable.OnTakeDamage -= OnTakeDamage;
+        }
         
         private void OnTakeDamage() =>  _controller.SetTrigger(triggerName);
        

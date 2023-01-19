@@ -13,7 +13,7 @@ namespace SpaceShooter.Projectiles
             
             if (other.TryGetComponent(out IDamageable obj))
             {
-                if(obj is Shield)
+                if(obj is PlayerHealth or Shield)
                     return;
                 obj.TakeDamage(GetDamage());
                 gameObject.SetActive(false);
