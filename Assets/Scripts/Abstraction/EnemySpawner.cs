@@ -18,7 +18,7 @@ namespace SpaceShooter.Abstraction
         protected Pool<Enemy> _pool;
         protected bool _canSpawn;
         protected Task _waitTask;
-        private CancellationTokenSource _cancellationTokenSource;
+        protected CancellationTokenSource _cancellationTokenSource;
 
 
         private void Awake()
@@ -64,7 +64,7 @@ namespace SpaceShooter.Abstraction
             enemy.EnemyDestroyed -= OnEnemyDestroy;
         }
 
-        private async void WaitForCanSpawn()
+        protected async void WaitForCanSpawn()
         {
             while (_currentCount >= maxCountForSpawn)
                 await Task.Delay(50);

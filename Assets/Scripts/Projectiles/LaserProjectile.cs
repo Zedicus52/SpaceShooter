@@ -8,7 +8,6 @@ namespace SpaceShooter.Projectiles
 {
     public class LaserProjectile : Projectile
     {
-        public float AwaitTime => stepForDrawing * 0.5f - lifeTime * 0.5f;
         [SerializeField] private float stepForDrawing;
         [SerializeField] private float lifeTime;
         private int _maxSpriteHeight;
@@ -23,8 +22,16 @@ namespace SpaceShooter.Projectiles
             _transform = transform;
             _renderer.drawMode = SpriteDrawMode.Tiled;
             _startSize = _renderer.size.y;
+            
             _startOffset = _collider.offset.y;
-            _maxSpriteHeight = Mathf.CeilToInt(ScreenBounds.UpSide) * 2;
+            _maxSpriteHeight = Mathf.CeilToInt(_startSize)*2;
+        }
+
+        private void OnEnable()
+        {
+            _renderer.size = new Vector2(_renderer.size.x, _startSize);
+            _collider.size = _renderer.size;
+            _collider.offset = new Vector2(_collider.size.x, _startOffset);
         }
 
         public override void InitializeProjectile(bool isInverted = false)
@@ -58,14 +65,13 @@ namespace SpaceShooter.Projectiles
         {
             if (_renderer.size.y < _maxSpriteHeight)
             {
-                _renderer.size = new Vector2(_renderer.size.x, _renderer.size.y +( stepForDrawing * Time.deltaTime));
+                _renderer.size = new Vector2(_renderer.size.x, _renderer.size.y +(stepForDrawing * Time.deltaTime));
                 _collider.size = _renderer.size;
                 _collider.offset = new Vector2(_collider.offset.x, -_renderer.size.y * 0.45f);
                 if (_renderer.size.y >= _maxSpriteHeight)
                 {
                     StartCoroutine(LifeCycle());
                 }
-                    
             }
         }
 

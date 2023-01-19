@@ -128,8 +128,8 @@ MonoBehaviour:
   minDamage: 3
   maxDamage: 8
   speed: 0
-  stepForDrawing: 11.6
-  lifeTime: 3.3
+  stepForDrawing: 2.2
+  lifeTime: 4.3
 --- !u!1 &7406081803835982966
 GameObject:
   m_ObjectHideFlags: 0

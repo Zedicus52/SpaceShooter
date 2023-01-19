@@ -9,7 +9,7 @@ namespace SpaceShooter.Weapons
         {
             var proj = _pool.GetObject();
             proj.InitializeProjectile(invertedDirectionForProjectile);
-            proj.transform.position = new Vector3(transform.position.x, transform.position.y-proj.SpriteHeight*2f, 
+            proj.transform.position = new Vector3(transform.position.x, transform.position.y-proj.SpriteHeight, 
                 transform.position.z);
             proj.gameObject.SetActive(true);
         }

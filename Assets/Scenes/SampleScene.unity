@@ -636,6 +636,7 @@ GameObject:
   - component: {fileID: 221254081}
   - component: {fileID: 221254082}
   - component: {fileID: 221254083}
+  - component: {fileID: 221254085}
   - component: {fileID: 221254084}
   m_Layer: 0
   m_Name: EnemySpawner
@@ -691,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCountForSpawn: 3
-  spawnDelay: 40
+  spawnDelay: 20
   prefab: {fileID: 8908451037857122561, guid: 1441584cfcf1dab4cbfa7c409607b673, type: 3}
   parentObjectForProjectiles: {fileID: 1448721649}
   audioSource: {fileID: 1500559160}
@@ -708,7 +709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCountForSpawn: 5
-  spawnDelay: 50
+  spawnDelay: 30
   prefab: {fileID: 2085273361797085820, guid: a5b78fc43f06fea4e97a601bfade1e21, type: 3}
   parentObjectForProjectiles: {fileID: 1448721649}
   audioSource: {fileID: 1500559160}
@@ -725,7 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCountForSpawn: 1
-  spawnDelay: 60
+  spawnDelay: 40
   prefab: {fileID: 5068340856591914582, guid: 570202ddd18d30744b59a1ca0cafbc8a, type: 3}
   parentObjectForProjectiles: {fileID: 1448721649}
   audioSource: {fileID: 1500559160}
@@ -741,7 +742,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8109aafb01841f8a0fadcdf7cdd6c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeSpawningNewEnemyType: 150
+  delayBeforeSpawningNewEnemyType: 120
+--- !u!114 &221254085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221254077}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f8fc414aa44781a34587b7e255a6b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCountForSpawn: 2
+  spawnDelay: 35
+  prefab: {fileID: 1942714213950530064, guid: b856d6cb479112b4898eb15c9b4ea55d, type: 3}
+  parentObjectForProjectiles: {fileID: 0}
+  audioSource: {fileID: 1500559160}
 --- !u!1 &317070603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &678501249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3113,7 +3131,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7052241878376893574, guid: d3731cda95c75f4468c7394f6d048dd7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

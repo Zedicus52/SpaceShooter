@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using SpaceShooter.Abstraction;
 using SpaceShooter.DataStructures;
-using SpaceShooter.Projectiles;
 using SpaceShooter.Weapons;
 using UnityEngine;
 
@@ -20,10 +18,20 @@ namespace SpaceShooter.Enemies
             base.Awake();
         }
         
-        public override void OnEnable()
+        public override async void OnEnable()
         {
+           
             SetDirection();
-            base.OnEnable();
+            if(!_isIntialized)
+                Initialize(transform);
+            _spriteRenderer.color = Color.white;
+            _currentHealth = maxHealth;
+            _canMove = true;
+            _enemyCanShoot = false;
+            await Task.Delay(100);
+            _enemyCanShoot = true;
+            if(_weapon != null && gameObject.activeInHierarchy)
+                StartCoroutine(_shootCoroutine);
         }
         
         public override void Update()
@@ -41,13 +49,7 @@ namespace SpaceShooter.Enemies
         {
             while(_enemyCanShoot)
             {
-                _canMove = false;
                 _weapon.Shoot();
-                if (_weapon.Projectile is LaserProjectile proj)
-                {
-                    yield return new WaitForSeconds(proj.AwaitTime);
-                    _canMove = true;
-                }
                 yield return new WaitForSeconds(_weapon.ShootDelay);
             }
         }

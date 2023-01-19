@@ -23,7 +23,7 @@ namespace SpaceShooter.Abstraction
         public AudioClip DestroyClip => destroyClip;
         public bool IsAlive => _currentHealth > 0;
 
-        [SerializeField] private bool isDebug;
+        [SerializeField] protected bool isDebug;
 
         [SerializeField] protected WeightRandomList<Bonus> bonuses;
         [Range(0f,1f)]
@@ -40,7 +40,8 @@ namespace SpaceShooter.Abstraction
         protected bool _enemyCanShoot;
         protected bool _canMove;
         protected int _currentHealth;
-        private SpriteRenderer _spriteRenderer;
+        protected SpriteRenderer _spriteRenderer;
+        protected bool _isIntialized;
 
         protected virtual void Awake()
         {
@@ -51,6 +52,8 @@ namespace SpaceShooter.Abstraction
 
         protected void Initialize(Transform projectileParentObject)
         {
+            if(_isIntialized)
+                return;
             if (TryGetComponent(out Weapon weapon))
             {
                 _weapon = weapon;
@@ -60,6 +63,7 @@ namespace SpaceShooter.Abstraction
             _canMove = true;
             
             CalculateSpriteSize();
+            _isIntialized = true;
         }
 
         public void InitializeEnemy(Transform projectileParentObject) => Initialize(projectileParentObject);
