@@ -51,3 +51,5 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 0b3d49cd8610b5d498471a2aaf76b744, type: 3}
   maxLevelForUpgrade: 3
   maxLevelForDelayBonus: 3
+  weaponIcon: {fileID: 21300000, guid: 18914e791174ce5419faadf98a75f59c, type: 3}
+  weaponIconBackground: {fileID: 3808985181416546002, guid: 16dea6ecf2c6a5d41aa30f4c3509af3d, type: 3}

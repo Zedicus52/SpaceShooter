@@ -27,7 +27,7 @@ namespace SpaceShooter.EnemySpawners
             enemy.InitializeEnemy(parentObjectForProjectiles);
             enemy.EnemyDestroyed += OnEnemyDestroy;
             float x = Random.Range(enemy.Border.LeftSide, enemy.Border.RightSide);
-            float y = Random.Range(0.5f, enemy.Border.UpSide);
+            float y = Random.Range(0.5f, enemy.Border.UpSide-enemy.SpriteSize.y*0.5f);
             enemy.transform.position = new Vector3(x,y,0);
             enemy.gameObject.SetActive(true);
             _currentCount += 1;

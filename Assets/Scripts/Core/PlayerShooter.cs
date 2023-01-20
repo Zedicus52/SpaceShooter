@@ -10,6 +10,7 @@ namespace SpaceShooter.Core
     public class PlayerShooter : MonoBehaviour
     {
         public event Action<PlayerWeapon> WeaponChanged;
+        public event Action<Sprite, Sprite> NewWeaponSet;
         public event Action<float> WeaponShootDelayChanged;
         public PlayerWeapon CurrentWeapon => currentWeapon;
         [SerializeField] private Transform parentForProjectiles;
@@ -41,6 +42,7 @@ namespace SpaceShooter.Core
             _canShoot = false;
             currentWeapon = weapon;
             currentWeapon.InitializeWeapon(parentForProjectiles);
+            NewWeaponSet?.Invoke(weapon.WeaponIcon, weapon.WeaponIconBackground);
             _canShoot = true;
         }
     }

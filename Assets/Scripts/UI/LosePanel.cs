@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using SpaceShooter.Core;
 using TMPro;
@@ -16,8 +15,6 @@ namespace SpaceShooter.UI
         private void OnEnable() => health.PlayerDeath += OnPlayerDeath;
 
         private void OnDisable() => health.PlayerDeath -= OnPlayerDeath;
-       
-
 
         private void OnPlayerDeath()
         {
