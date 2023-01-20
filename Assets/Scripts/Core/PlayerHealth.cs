@@ -8,10 +8,12 @@ namespace SpaceShooter.Core
     {
         public event Action<int> HealthChanged;
         public event Action OnTakeDamage;
+        public event Action<int, int> MaxHealthChanged;
         public event Action PlayerDeath; 
         public bool IsAlive => _currentHealth > 0;
+        public int MaxLevelForMaxHealthBonus => maxLevelForMaxHealthBonus;
+
         [SerializeField] private int maxLevelForMaxHealthBonus;
-        
         [SerializeField] private int maxHealth;
         [SerializeField] private float takeDamageDelay;
         [SerializeField] private AudioSource audioSource;
@@ -107,6 +109,7 @@ namespace SpaceShooter.Core
             maxHealth += health;
             _currentHealth += health;
             _currentLevelMaxHealthBonus += 1;
+            MaxHealthChanged?.Invoke(_currentLevelMaxHealthBonus+1, _currentLevelMaxHealthBonus);
             OnHealthChanged(_currentHealth);
 
         }

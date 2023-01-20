@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using SpaceShooter.Abstraction;
@@ -16,9 +15,7 @@ namespace SpaceShooter.Core
             playerShooter.WeaponChanged += PlayerShooterOnWeaponChanged;
             playerShooter.WeaponShootDelayChanged += PlayerShooterOnWeaponShootDelayChanged;
         }
-
-      
-
+        
         private void OnDisable()
         {
             playerShooter.WeaponChanged -= PlayerShooterOnWeaponChanged;

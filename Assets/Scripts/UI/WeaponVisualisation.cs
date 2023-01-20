@@ -1,3 +1,4 @@
+using SpaceShooter.Abstraction;
 using SpaceShooter.Core;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,10 +14,10 @@ namespace SpaceShooter.UI
         private void OnEnable() => shooter.NewWeaponSet += OnNewWeaponSet;
         private void OnDisable() => shooter.NewWeaponSet -= OnNewWeaponSet;
 
-        private void OnNewWeaponSet(Sprite icon, Sprite background)
+        private void OnNewWeaponSet(PlayerWeapon weapon)
         {
-            backgroundRenderer.sprite = background;
-            iconRenderer.sprite = icon;
+            backgroundRenderer.sprite = weapon.WeaponIconBackground;
+            iconRenderer.sprite = weapon.WeaponIcon;
         }
     }
 }
