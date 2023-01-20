@@ -65,7 +65,5 @@ namespace SpaceShooter.UI
                 obj.SetActive(true);
             }
         }
-
-        
     }
 }

@@ -8,6 +8,7 @@ namespace SpaceShooter.Core
     {
         public event Action<int> HealthChanged;
         public event Action OnTakeDamage;
+        public event Action PlayerDeath; 
         public bool IsAlive => _currentHealth > 0;
         [SerializeField] private int maxLevelForMaxHealthBonus;
         
@@ -73,6 +74,7 @@ namespace SpaceShooter.Core
             {
                 _currentHealth = 0;
                 OnHealthChanged(0);
+                PlayerDeath?.Invoke();
                 gameObject.SetActive(false);
             }
             OnHealthChanged(_currentHealth);
