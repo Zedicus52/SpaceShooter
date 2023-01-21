@@ -108,8 +108,9 @@ namespace SpaceShooter.Core
 
             maxHealth += health;
             _currentHealth += health;
+            
             _currentLevelMaxHealthBonus += 1;
-            MaxHealthChanged?.Invoke(_currentLevelMaxHealthBonus+1, _currentLevelMaxHealthBonus);
+            MaxHealthChanged?.Invoke(_currentLevelMaxHealthBonus, maxLevelForMaxHealthBonus);
             OnHealthChanged(_currentHealth);
 
         }
